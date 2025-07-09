@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Ben Watts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-dark: #1f2937;
+      --text-light: #111827;
+      --text-dark: #f3f4f6;
+      --primary: #0077cc;
+      --accent: #e0f2fe;
+      --accent-dark: #2d3748;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg-light);
+      color: var(--text-light);
+      overflow-x: hidden;
+      cursor: url('https://cdn-icons-png.flaticon.com/512/724/724980.png') 16 16, auto;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    .container {
+      max-width: 800px;
+      margin: 5rem auto;
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      animation: fadeInUp 1s ease-out;
+    }
+    .dark-mode .container {
+      background: #374151;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      text-align: center;
+      animation: bounceIn 1s ease-in-out;
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      60% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    p, li {
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+    .highlight {
+      background: var(--accent);
+      padding: 1.2rem;
+      border-left: 5px solid var(--primary);
+      border-radius: 8px;
+      margin: 2rem 0;
+      transition: background 0.3s ease;
+    }
+    .dark-mode .highlight {
+      background: var(--accent-dark);
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+    .toggle-btn:hover {
+      background: #005fa3;
+    }
+    .parallax {
+      background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.05;
+      background-attachment: fixed;
+      transform: translate(0px, 0px);
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax" id="parallax"></div>
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
+
+  <div class="container">
+    <h1>👋 Hi, I'm Ben Watts</h1>
+    <p>
+      I'm a London-based technical recruiter specialising in senior software engineering and AI leadership roles across the US Blockchain and Payments space.
+    </p>
+    <p>
+      Currently, I lead engineering hiring at <a href="https://storm2.com" target="_blank">Storm2</a>, Levin's flagship FinTech brand. I've placed top-tier talent at companies like Mastercard, Kraken, Klarna, and Monzo — and I pride myself on deep, high-impact network building.
+    </p>
+    <div class="highlight">
+      <strong>Recent wins:</strong>
+      <ul>
+        <li>VP of Engineering at a top-2 global payment processor</li>
+        <li>CISO & 6 SREs at a leading Web3 infra company</li>
+        <li>Director of Engineering at an asset manager with $6T AUM</li>
+        <li>Senior Staff SWE at a Series A B2B payments startup</li>
+      </ul>
+    </div>
+    <p>
+      I’ve spent over 3.5 years building a highly curated network of the top 1% of engineering leaders in the world. These are the people rewriting infrastructure, scaling unicorns, and solving problems most engineers never even see.
+    </p>
+    <p>
+      Before Storm2, I was top biller at Storm5 and led engineering & product at Storm6 — where I placed 40+ standout engineers in high-impact EdTech startups.
+    </p>
+    <p>
+      I believe in doing recruitment right — no spray-and-pray. Just deep market knowledge, clear communication, and a focus on real outcomes.
+    </p>
+    <p>
+      Outside work, I love quirky web projects, running half marathons, and generally making fun things online.
+    </p>
+    <p style="margin-top: 2rem; text-align: center;">
+      📫 <a href="mailto:ben.watts@storm2.com">ben.watts@storm2.com</a><br/>
+      💼 <a href="https://www.linkedin.com/in/ben-watts" target="_blank">View my LinkedIn</a>
+    </p>
+  </div>
+  <footer>
+    &copy; 2025 Ben Watts. Built with HTML, vibes, and too much coffee.
+  </footer>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    document.addEventListener('mousemove', e => {
+      const parallax = document.getElementById('parallax');
+      const x = (e.clientX - window.innerWidth / 2) * 0.01;
+      const y = (e.clientY - window.innerHeight / 2) * 0.01;
+      parallax.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>
